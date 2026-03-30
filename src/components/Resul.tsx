@@ -10,7 +10,7 @@ export const ResultCard = ({ isPassed, score, data }: { isPassed: boolean, score
                         You answered {score} out of {data.length} questions correctly.</p>
                     {isPassed ? (
                         <p className="text-sm sm:text-base md:text-lg lg:text-xl text-green-500">
-                            Congratulations! You Passed! Great job! hello  🎉
+                            Congratulations! You Passed! Great job!   🎉
                         </p>) : (<p className="text-sm sm:text-base md:text-lg lg:text-xl text-red-500">
                             Sorry! You Failed. Better luck next time 😊
                         </p>
