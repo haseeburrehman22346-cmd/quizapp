@@ -7,7 +7,7 @@ type State = {
     selectedOption: string;
     score: number;
 };
-type Action =
+export type Action =
     | { type: "SET_DATA"; payload: Question[] }
     | { type: "NEXT_QUESTION" }
     | { type: "OPTION_SELECTED"; payload: string };
