@@ -33,7 +33,19 @@ export const QuizCard = () => {
                             </h3>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                            <Options data={data} currentQuestion={currentQuestion} dispatch={dispatch} selectedOption={selectedOption} />
+                            {/* {[...data[currentQuestion]?.incorrect_answers,
+                            data[currentQuestion]?.correct_answer].map((answer, index) => {
+                                const isCorrect = answer === data[currentQuestion]?.correct_answer;
+                                const isSelected = selectedOption === answer;
+                                return (
+                                    <button key={index} onClick={() =>
+                                        !selectedOption && dispatch({ type: "OPTION_SELECTED", payload: answer })}
+                                        disabled={!!selectedOption}
+                                        className={`text-base md:text-lg px-4 py-2 border border-black rounded-lg transition-all duration-300 font-medium
+            ${selectedOption ? isCorrect ? "bg-black text-white" : isSelected ? "bg-red-500 text-white" : "bg-gray-300 text-black" : "bg-gray-200 hover:bg-gray-300 text-black cursor-pointer"}`} dangerouslySetInnerHTML={{ __html: answer }}>
+                                    </button>);
+                            })} */}
+                            <Options data={data} currentQuestion={currentQuestion} selectedOption={selectedOption} dispatch={dispatch} />
                         </div>
                         <div className="flex flex-col items-center gap-4 mt-4 min-h-[120px]">{selectedOption && (
                             <div className="flex flex-col items-center gap-6 animate-in fade-in slide-in-from-top-4 duration-500">
