@@ -8,10 +8,3 @@ interface Question {
   selectedOption: string;
 }
 export default Question
-
- export type Props = {
-    data: any[];
-    currentQuestion: number;
-    selectedOption: string;
-    dispatch: any;
-};

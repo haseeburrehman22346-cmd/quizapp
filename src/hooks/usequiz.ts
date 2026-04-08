@@ -10,7 +10,7 @@ const useQuiz = () => {
       dispatch({ type: "SET_DATA", payload: res.data });
     };
     fetchData();
-  }, []);
+  },[]);
   return { ...state, dispatch };
 };
 export default useQuiz;
