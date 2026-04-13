@@ -1,16 +1,13 @@
 "use client";
 import { useReducer } from "react";
-import Question from "@/types/quiz";
+import Question, { QuizAction } from "@/types/quiz";
 type State = {
     data: Question[];
     currentQuestion: number;
     selectedOption: string;
     score: number;
 };
-export type Action =
-    | { type: "SET_DATA"; payload: Question[] }
-    | { type: "NEXT_QUESTION" }
-    | { type: "OPTION_SELECTED"; payload: string };
+export type Action = QuizAction;
 const useDataSet = () => {
     const initialState: State = {
         data: [],
@@ -31,7 +28,7 @@ const useDataSet = () => {
                     currentQuestion: state.currentQuestion + 1,
                     selectedOption: "",
                 };
-            case "OPTION_SELECTED":
+            case "SET_SELECTED_OPTION":
                 const isCorrect = action.payload === state.data[state.currentQuestion]?.correct_answer;
                 return {
                     ...state,

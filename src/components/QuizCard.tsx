@@ -1,6 +1,6 @@
 "use client";
 import useQuiz from "@/hooks/usequiz";
-import { ResultCard } from "./Resul";
+import { ResultCard } from "./Result";
 import Options from "./Button";
 export const QuizCard = () => {
     const { data, currentQuestion, dispatch, selectedOption, score } = useQuiz();
@@ -17,7 +17,7 @@ export const QuizCard = () => {
                 <div className="fixed top-0 left-0 w-full bg-gray-100 h-4 z-50">
                     <div className="bg-gray-500 h-full transition-all duration-500 ease-out" style={{ width: `${((currentQuestion + 1) / data.length) * 100}%` }}></div>
                 </div>
-                <div className="relative flex flex-col justify-between gap-8 md:w-2xl max-w-2xl mx-auto bg-white p-12 rounded-lg shadow-gray-200 shadow-xl border border-gray-100 min-h-[400px] flex items-center justify-center">
+                <div className="relative flex flex-col justify-between gap-8 md:w-2xl max-w-2xl mx-auto bg-white p-12 rounded-lg shadow-gray-200 shadow-xl border border-gray-100 min-h-[400px]">
                     <div className="flex flex-col gap-4 w-full">
                         <div className="mb-4">
                             <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-700">Question {currentQuestion + 1} of {data.length}</h2>
